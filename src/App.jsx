@@ -7,6 +7,7 @@ import Login from './pages/Login';
 import NavBar from './components/NavBar';
 import LoadingScreen from './components/LoadingScreen';
 import { useSelector } from 'react-redux';
+import ProtectedRoutes from './components/ProtectedRoutes';
 
 function App() {
 
@@ -19,8 +20,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Home /> }/>
         <Route path="/products/:id" element={<ProductDetail />}/>
-        <Route path="/purchases" element={<Purchases />}/>
         <Route path="/login" element={<Login />}/>
+        <Route element={<ProtectedRoutes />}>
+          <Route path="/purchases" element={<Purchases />}/>
+        </Route>
       </Routes>
     </HashRouter>
   )

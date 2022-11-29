@@ -184,3 +184,9 @@
   color: rgba(6, 45, 93, 0.826);
   font-size: .95em;
 }
+
+/*formulario: Login*/
+.form__bootstrap{
+  max-width: 400px;
+  margin: 2rem auto;
+}
