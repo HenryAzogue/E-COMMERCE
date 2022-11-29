@@ -20,33 +20,38 @@ const Home = () => {
 
   return (
     <div className='home'>
-      <div className='home__category'>
-        {
-          categoryProduct.map((category) => (
-            <li className='category__li' key={category.id}>
-              <button
-                onClick={() => dispatch(filterCategoryProductThunk(category.id))}
-                className='category__btn'
-              >{category.name}</button>
-            </li>
-          ))
-        }
 
-        <div>
+      <div className='home__category'>
+        <div className='category__input'>
           <input
+          className='input__search'
             type="text"
-            placeholder='search'
+            placeholder='Search'
             value={inputSearch}
             onChange={(e) => setInputSearch(e.target.value)}
           />
-          <button onClick={()=> dispatch(filterNameProductThunk(inputSearch))}>
-            Search
+          <button 
+            className='input__btn'
+            onClick={() => dispatch(filterNameProductThunk(inputSearch))}>
+            <i className="fa-solid fa-magnifying-glass"></i>
           </button>
         </div>
+        <section className='category__option'>
+          {
+            categoryProduct.map((category) => (
+              <li className='option__li' key={category.id}>
+                <button
+                  onClick={() => dispatch(filterCategoryProductThunk(category.id))}
+                  className='option__btn'
+                >{category.name}</button>
+              </li>
+            ))
+          }
+        </section>
       </div>
 
       <div className='home__page'>
-        <h1 className='home__h1'>All products for you! </h1>
+        <h1 className='home__h1'>Store. The best way to by the products you love.</h1>
         {
           products.map((product) => (
             <li className='home__li' key={product.id}>
