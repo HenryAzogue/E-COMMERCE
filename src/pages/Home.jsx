@@ -20,17 +20,17 @@ const Home = () => {
 
   return (
     <div className='home'>
-
+      {/*Category*/}
       <div className='home__category'>
         <div className='category__input'>
           <input
-          className='input__search'
+            className='input__search'
             type="text"
             placeholder='Search'
             value={inputSearch}
             onChange={(e) => setInputSearch(e.target.value)}
           />
-          <button 
+          <button
             className='input__btn'
             onClick={() => dispatch(filterNameProductThunk(inputSearch))}>
             <i className="fa-solid fa-magnifying-glass"></i>
@@ -50,23 +50,43 @@ const Home = () => {
         </section>
       </div>
 
-      <div className='home__page'>
-        <h1 className='home__h1'>Store. The best way to by the products you love.</h1>
-        {
-          products.map((product) => (
-            <li className='home__li' key={product.id}>
-              <div className='home__card'>
-                <Link
-                  className='card__title'
-                  to={`/products/${product.id}`}
-                >
-                  {product.title}
-                </Link>
-                <img className='card__img' src={product.productImgs[0]} alt="" />
-              </div>
-            </li>
-          ))
-        }
+      {/*All Products*/}
+      <div className='home__product'>
+        <div className="product__h1">
+          <p className='h1__p h1__p--title'>Store.</p>
+          <p className='h1__p h1__p--subtitle'>The best way to by the products you love.</p>
+        </div>
+        <ul className='product__container'>
+          {
+            products.map((product) => (
+              <li className='container__li' key={product.id}>
+                <div className='li__card'>
+                  <div className="card__li">
+                    <Link
+                      className='card__link'
+                      to={`/products/${product.id}`}
+                    >
+                      <img className='card__img' src={product.productImgs[0]} alt="" />
+                    </Link>
+                  </div>
+                  <div className="card__info">
+                    <p className='card__title'>{product.title}</p>
+                    <p className='card__price'>From ${product.price}</p>
+                    <button className='card__button'>Buy</button>
+
+                    <Link
+                      className='card__moreInfo'
+                      to={`/products/${product.id}`}>
+                      <p className='info__p'>Learn more </p>
+                      <i className="fa-solid fa-angle-right"></i>
+                    </Link>
+
+                  </div>
+                </div>
+              </li>
+            ))
+          }
+        </ul>
       </div>
     </div>
   );

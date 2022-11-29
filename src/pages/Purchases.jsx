@@ -6,8 +6,8 @@ const Purchases = () => {
 
   const dispatch = useDispatch();
   const purchases = useSelector(state => state.purchases);
-  const carts = useSelector(state => state.purchases.cart);
-  console.log(purchases);
+  // const carts = useSelector(state => state.purchases.cart);
+  // console.log(purchases);
 
   useEffect(() => {
     dispatch(getPurchasesThunk());
@@ -20,13 +20,15 @@ const Purchases = () => {
           {
             purchases.map((purchase) => (
               <li key={purchase.id}>
-                {purchase.cart(map(carts)=>(
-                  
+                {purchase.cart.products.map((product)=>(
+                  <div key={product.id}>
+                    <p>{product.title}</p>
+                    <p>{product.price}</p>
+                    <p>{product.brand}</p>
+                  </div>
                 ))}
-
-              
+             
               </li>
-
             ))
           }
         </ul>
