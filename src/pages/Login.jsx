@@ -12,31 +12,37 @@ const Login = () => {
 
   const submit = (data) => {
     axios.post("https://e-commerce-api.academlo.tech/api/v1/users/login", data)
-        .then((res) => {
-          navigate("/");
-          console.log(res);
-          localStorage.setItem("token", res.data.data.token);
-        })
-        
-        .catch((error) => {
-          if(error.response?.status === 404){
-            alert("Credenciales incorrectas");
-          } else {
-            console.log(error.response?.data);
-          }
-        })
+      .then((res) => {
+        navigate("/");
+        console.log(res);
+        localStorage.setItem("token", res.data.data.token);
+      })
+
+      .catch((error) => {
+        if (error.response?.status === 404) {
+          alert("Credenciales incorrectas");
+        } else {
+          console.log(error.response?.data);
+        }
+      })
   }
 
   return (
     <Form
       className='form__bootstrap'
       onSubmit={handleSubmit(submit)}>
-      <p>CREDENCIALES : john@gmail.com
-        john1234
-      </p>
+      <div className='form__div'>
+        <p className='div__title'>Welcome! Enter your email and password to continue</p>
+        <div className="div__test">
+          <p>Test data : </p>
+          <p><i class="fa-regular fa-envelope"></i> john@gmail.com</p>
+          <p><i class="fa-solid fa-unlock-keyhole"></i> john1234 </p>
+        </div>
+      </div>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
         <Form.Control
+          className='form__input'
           type="email"
           placeholder="Enter email"
           {...register("email")}
@@ -46,6 +52,7 @@ const Login = () => {
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Password</Form.Label>
         <Form.Control
+        className='form__input'
           type="password"
           placeholder="Password"
           {...register("password")}

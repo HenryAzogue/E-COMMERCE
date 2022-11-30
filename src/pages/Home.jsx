@@ -53,8 +53,9 @@ const Home = () => {
       {/*All Products*/}
       <div className='home__product'>
         <div className="product__h1">
-          <p className='h1__p h1__p--title'>Store.</p>
-          <p className='h1__p h1__p--subtitle'>The best way to by the products you love.</p>
+          <p className='h1__p h1__p--text'>
+            <pan className='h1__span'>Store.</pan>
+            The best way to by the products you love.</p>
         </div>
         <ul className='product__container'>
           {
