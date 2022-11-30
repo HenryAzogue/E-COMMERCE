@@ -52,7 +52,7 @@ const Login = () => {
       <Form.Group className="mb-3" controlId="formBasicPassword">
         <Form.Label>Password</Form.Label>
         <Form.Control
-        className='form__input'
+          className='form__input'
           type="password"
           placeholder="Password"
           {...register("password")}

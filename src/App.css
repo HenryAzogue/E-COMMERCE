@@ -329,8 +329,23 @@
 .form__div p {
   text-align: center;
 }
-
 .form__bootstrap Button {
   width: 100%;
   border-radius: 10px;
 }
+
+/*Page::Purchases*/
+.page__purchases{
+  /* margin: 2em; */
+}
+.purchases__section {
+  /* background-color: pink; */
+}
+.purchases__ul {}
+.ul__li {
+  list-style-type: none;
+}
+.li__container {
+  background-color: pink;
+}
+.container__data{}
