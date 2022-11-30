@@ -7,7 +7,7 @@ import { getProductsThunk } from '../store/slices/product.slice';
 const ProductDetail = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
-  const [ rates, setRates ] = useState("");
+  const [ rates, setRates ] = useState(0);
 
   useEffect(() => {
     dispatch(getProductsThunk());
@@ -19,13 +19,14 @@ const ProductDetail = () => {
   const relateProduct = productList.filter(
     (prodcutItem) => prodcutItem.category.id === productInfo.category.id
   );
+  
 
   const addToCart = ()=> {
     const addProduct = {
       id: productInfo.id, 
       quantify: rates
     }
-    console.log(addProduct);
+    // console.log(addProduct);
   }
 
   return (
@@ -79,7 +80,7 @@ const ProductDetail = () => {
                 </button>
                 <input
                   className='button__input'
-                  type="text"
+                  type="number"
                   value={rates}
                   onChange={(e)=> setRates(e.target.value)}
                 />
