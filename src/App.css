@@ -238,9 +238,9 @@
 .detail__section {
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  padding: 0 2em;
+  /* padding: 0 2em; */
 }
 .section__carousel {
   width: 25em;
@@ -283,6 +283,67 @@
   color: var(--tx2);
   text-align: justify;
 }
+
+.text__add {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 1em;
+}
+.add__context {
+  color: var(--tx2);
+  list-style-type: none;
+  margin-left: .4em;
+}
+.text__add i {
+  padding-left: .4em;
+}
+.add__bag {
+  margin-left: .4em;
+  padding: 0;
+}
+.add__div{
+  /* background-color: violet; */
+  display: flex;
+  flex-direction: column;
+  margin-left: .4em;
+}
+.div__bag {
+  font-weight: 500;
+  color: var(--bcc);
+  background-color: var(--bbt);
+  border: none;
+  border-radius: 10px;
+
+  padding: .2em;
+  margin-bottom: .9em;
+}
+.bag__button {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.button__value1 {
+  color: var(--cl2);
+  border-radius: 12px 0 0 12px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  width: 40px;
+}
+.button__value2 {
+  color: var(--cl2);
+  border-radius: 0 12px 12px 0;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  width: 40px;
+}
+.button__input {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 50px;
+}
+
+
 .recommended {
   width: 100%;
   font-weight: 600;

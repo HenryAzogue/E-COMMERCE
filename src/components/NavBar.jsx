@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Offcanvas } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import index from '../assets/index'
 import CardSlidebar from './CardSlidebar';
@@ -36,7 +35,7 @@ const NavBar = () => {
             className='li__button'
             onClick={handleShow}
           >
-            <i class="fa-solid fa-cart-shopping"></i>
+            <i className="fa-solid fa-cart-shopping"></i>
           </button>
         </li>
       </ul>

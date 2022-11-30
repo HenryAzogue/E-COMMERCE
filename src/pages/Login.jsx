@@ -35,8 +35,8 @@ const Login = () => {
         <p className='div__title'>Welcome! Enter your email and password to continue</p>
         <div className="div__test">
           <p>Test data : </p>
-          <p><i class="fa-regular fa-envelope"></i> john@gmail.com</p>
-          <p><i class="fa-solid fa-unlock-keyhole"></i> john1234 </p>
+          <p><i className="fa-regular fa-envelope"></i> john@gmail.com</p>
+          <p><i className="fa-solid fa-unlock-keyhole"></i> john1234 </p>
         </div>
       </div>
       <Form.Group className="mb-3" controlId="formBasicEmail">

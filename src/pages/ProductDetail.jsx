@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Carousel } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
@@ -7,6 +7,7 @@ import { getProductsThunk } from '../store/slices/product.slice';
 const ProductDetail = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
+  const [ rates, setRates ] = useState("");
 
   useEffect(() => {
     dispatch(getProductsThunk());
@@ -18,6 +19,14 @@ const ProductDetail = () => {
   const relateProduct = productList.filter(
     (prodcutItem) => prodcutItem.category.id === productInfo.category.id
   );
+
+  const addToCart = ()=> {
+    const addProduct = {
+      id: productInfo.id, 
+      quantify: rates
+    }
+    console.log(addProduct);
+  }
 
   return (
     <div className='detail'>
@@ -44,10 +53,46 @@ const ProductDetail = () => {
           <div className='info__detail'>
             <p className='detail__text'>{productInfo?.description}</p>
           </div>
+          <div className="text__add">
+            <i className="fa-solid fa-truck"></i>
+            <p className="add__context">
+              <b> Ships:</b>
+              <li>1 business day</li>
+              <li>Free Shipping</li>
+              <li>Get delivery dates</li>
+            </p>
+            <i className="fa-solid fa-bag-shopping"></i>
+            <p className="add__context">
+              <b> Pickup:</b>
+              <li>Check availability</li>
+            </p>
+            <div className='add__div'>
+              <button 
+                className='div__bag'
+                onClick={addToCart}
+              >
+                Add to Bag
+              </button>
+              <div className='bag__button'>
+                <button className='button__value1'>
+                <i className="fa-solid fa-minus"></i>
+                </button>
+                <input
+                  className='button__input'
+                  type="text"
+                  value={rates}
+                  onChange={(e)=> setRates(e.target.value)}
+                />
+                <button className='button__value2'>
+                <i className="fa-solid fa-plus"></i>
+                </button>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
 
-        <p className="recommended">Discover similar items</p>
+      <p className="recommended">Discover similar items</p>
       <section className='detail__recommended'>
         <ul className='product__container'>
           {
