@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { Offcanvas } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
-import { getCartThunk } from '../store/slices/cart.slice';
+import { checkOutThunk, getCartThunk } from '../store/slices/cart.slice';
 
 const CardSlidebar = ({ show, handleClose }) => {
 
@@ -52,7 +52,10 @@ const CardSlidebar = ({ show, handleClose }) => {
             <p className="check__total">Total:</p>
             <p className="check__price">$ ??</p>
           </div>
-          <button className='check__button'>
+          <button
+            className='check__button'
+            onClick={()=>dispatch(checkOutThunk())}
+          >
             Check Out
           </button>
         </div>

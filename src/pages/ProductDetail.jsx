@@ -2,12 +2,13 @@ import React, { useEffect, useState } from 'react';
 import { Carousel } from 'react-bootstrap';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
+import { addProductThunk } from '../store/slices/cart.slice';
 import { getProductsThunk } from '../store/slices/product.slice';
 
 const ProductDetail = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
-  const [ rates, setRates ] = useState(0);
+  const [ rates, setRates ] = useState(2);
 
   useEffect(() => {
     dispatch(getProductsThunk());
@@ -24,11 +25,11 @@ const ProductDetail = () => {
   const addToCart = ()=> {
     const addProduct = {
       id: productInfo.id, 
-      quantify: rates
+      quantity: rates
     }
-    // console.log(addProduct);
+    dispatch(addProductThunk(addProduct));
   }
-
+ 
   return (
     <div className='detail'>
       <section className='detail__section'>
