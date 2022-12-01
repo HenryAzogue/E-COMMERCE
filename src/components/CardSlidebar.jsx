@@ -14,20 +14,50 @@ const CardSlidebar = ({ show, handleClose }) => {
   const cart = useSelector((state) => state.cart)
 
   return (
-    <Offcanvas show={show} onHide={handleClose}>
+    <Offcanvas
+      className='cart'
+      show={show} onHide={handleClose}>
       <Offcanvas.Header closeButton>
-        <Offcanvas.Title>Offcanvas</Offcanvas.Title>
+        <Offcanvas.Title>My Cart</Offcanvas.Title>
       </Offcanvas.Header>
       <Offcanvas.Body>
-        {
-          cart.map((product) => (
-            <div key={product.id}>
-              <p>{product.title}</p>
-              <p>{product.price}</p>
-            </div>
-          ))
-        }
+        <div>
+          {
+            cart.map((product) => (
+              <div
+                className='cart__div'
+                key={product.id}
+              >
+                <div className='div__cart'>
+                  <p className='cart__header'>{product.brand}</p>
+                  <i className="fa-solid fa-trash"></i>
+                </div>
+                <p className='div__p'>{product.title}</p>
+                <div className='cart__footer'>
+                  <p className='footer__quantify'>
+                    {/* {product.productsInCart.quantify} */}
+                    1
+                  </p>
+                  <p className='footer__p'>
+                    <b>Total: </b>{product.price}</p>
+                </div>
+
+              </div>
+            ))
+          }
+        </div>
+
+        <div className='cart__check'>
+          <div className="check__header">
+            <p className="check__total">Total:</p>
+            <p className="check__price">$ ??</p>
+          </div>
+          <button className='check__button'>
+            Check Out
+          </button>
+        </div>
       </Offcanvas.Body>
+
     </Offcanvas>
   );
 };

@@ -508,3 +508,75 @@
   font-weight: 600;
   margin-bottom: 1em;
 }
+
+/*Cart-Slice*/
+.cart{
+  font-size: var(--tipo-principal);
+}
+.cart__div {
+  /* background-color: violet; */
+  padding: 0 1em;
+}
+.div__cart {
+  display: flex;
+  justify-content: space-between;
+  padding: 0;
+}
+.div__cart i {
+  color: rgba(211, 37, 37, 0.882);
+}
+.cart__header {
+  color: var(--tx2);
+  font-size: .80rem;
+  font-weight: 700;
+  margin: 0;
+}
+.cart__footer {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+}
+.footer__quantify{
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  text-align: center;
+  width: 45px;
+}
+.footer__p {
+  font-size: .85rem;  
+}
+.footer__p b {
+  color: var(--tx2);
+}
+
+.cart__check {
+  border-top: 1px solid var(--bbt);
+}
+.check__header {
+  display: flex;
+  justify-content: space-between;
+  padding-top: .5em;
+}
+.check__total {
+  color: var(--tx2);
+  font-weight: 600;
+}
+.check__price {
+  font-weight: 600;
+}
+.check__button {
+  color: var(--bcl);
+  border: none;
+  background-color: var(--bbt);
+  border-radius: 9px;
+  font-size: 1.25rem;
+  font-weight: 600;
+  padding: .15em 0;
+  width: 100%;
+}
+
+
+/* 
+em= toma medidas relativas al contenedor
+rem= toma medidas relativas de la raiz
+*/
