@@ -46,9 +46,14 @@
 }
 
 /*Components: NavBar*/
+.hedader {
+
+}
 .menu {
   background: var(--cl1);
-  padding: 0.5rem 0;
+  padding: 0.5em 0;
+
+
 }
 
 .menu__ul {
@@ -90,7 +95,7 @@
 
 /*Page:: HOME*/
 .home {
-  padding: 1rem;
+  padding: 1em;
   display: flex;
   flex-direction: row;
 }
@@ -113,7 +118,7 @@
 
 .input__search {
   font-size: .8em;
-  padding: 0.5rem;
+  padding: 0.5em;
   border: none;
   border-radius: 25px 0 0 25px;
   width: 75%;
@@ -129,13 +134,13 @@
 
 /*Home::=> Category*/
 .category__option {
-  padding-top: 0.5rem;
+  padding-top: 0.5em;
 }
 
 .option__li {
   list-style-type: none;
-  padding: 0 0.5rem;
-  margin-bottom: 0.5rem;
+  padding: 0 0.5em;
+  margin-bottom: 0.5em;
 }
 
 .option__btn {
@@ -143,7 +148,7 @@
   font-size: .95em;
   font-weight: 600;
 
-  padding: 0.25rem 1rem;
+  padding: 0.25em 1em;
   border: none;
   border-radius: 25px;
 }
@@ -159,7 +164,7 @@
   font-weight: 600;
   letter-spacing: -.003em;
   text-align: left;
-  margin-left: 4rem;
+  margin-left: 4em;
 }
 
 .h1__span {
@@ -178,13 +183,13 @@
 
 .li__card {
   border-bottom: 1px solid rgba(0, 0, 0, 0.2);
-  padding: 0.5rem;
+  padding: 3em 0;
 }
 
 .card__li {
   display: block;
-  height: 10rem;
-  margin-bottom: .5rem;
+  height: 10em;
+  margin-bottom: .5em;
 }
 
 .card__link .card__img {
@@ -197,30 +202,39 @@
 }
 
 .card__info {
-  height: 10rem;
+  height: 10em;
 }
 
 .card__title {
-  font-size: var(--txt);
+  font-size: .95em;
   text-align: center;
   font-weight: 600;
 }
 
 .card__price {
   text-align: center;
+  font-size: .85em;
 }
 
 .card__button {
   display: block;
-  align-items: center;
   color: var(--bcl);
   border: none;
   background: var(--bbt);
   border-radius: 15px;
-  font-size: .85em;
-  padding: 0 .85rem;
+  font-size: .85rem;
+  padding: .25em 1em;
   margin: 0 auto;
-  margin-bottom: .5rem;
+  margin-bottom: .5em;
+}
+
+
+.card__button--link {
+  color: var(--bcl);
+  text-decoration: none;
+}
+.card__button--link:hover {
+  color: var(--bcl);
 }
 
 .card__moreInfo {
@@ -234,7 +248,7 @@
 }
 
 .card__moreInfo i {
-  margin-top: .25rem;
+  margin-top: .25em;
 }
 
 .infor__p {
@@ -255,7 +269,6 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  /* padding: 0 2em; */
 }
 
 .section__carousel {
@@ -331,7 +344,6 @@
 }
 
 .add__div {
-  /* background-color: violet; */
   display: flex;
   flex-direction: column;
   margin-left: .4em;
@@ -358,22 +370,24 @@
   color: var(--cl2);
   border-radius: 12px 0 0 12px;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  width: 40px;
+  padding: 0;
+  width: 2em;
 }
 
 .button__value2 {
   color: var(--cl2);
   border-radius: 0 12px 12px 0;
   border: 1px solid rgba(0, 0, 0, 0.2);
-  width: 40px;
+  padding: 0px;
+  width: 2em;
 }
 
 .button__input {
   border: 1px solid rgba(0, 0, 0, 0.2);
   text-align: center;
   width: 50px;
+  margin: 0;
 }
-
 
 .recommended {
   width: 100%;
@@ -393,11 +407,11 @@
 
 /*formulario: Login*/
 .form__bootstrap {
-  border: 1px solid rgb(62, 59, 59);
+  border: 1px solid rgba(0, 0, 0, .2);
   border-radius: 10px;
   font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
   max-width: 400px;
-  margin: 2rem auto;
+  margin: 2em auto;
   padding: 1em;
 }
 
@@ -432,6 +446,16 @@
   width: 100%;
   border-radius: 10px;
 }
+
+
+
+
+
+
+
+
+
+
 
 /*Page::Purchases*/
 .page__purchases {
@@ -497,12 +521,10 @@
 }
 .container__data--brand {
   color: var(--tx2);
-  font-size: .85rem;
+  font-size: .85em;
   font-weight: 600;
 }
-.container__data--title {
-
-}
+.container__data--title {}
 .container__data--price{
   color: var(--cl1);
   font-weight: 600;
@@ -575,6 +597,23 @@
   width: 100%;
 }
 
+/*footer*/
+.section__footer {
+  background-color: var(--tx1);
+  padding: 3.5em 0;
+  bottom: 0;
+  /* position: relative; */
+}
+.footer__header {
+  width: 95%;
+  margin: 0 auto;
+}
+.header__title {
+  color: var(--bcl);
+  font-size: 1.55rem;
+  font-weight: 600;
+  text-align: center;
+}
 
 /* 
 em= toma medidas relativas al contenedor

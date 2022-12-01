@@ -53,11 +53,9 @@ const Purchases = () => {
                     className='li__container'
                     key={product.id}
                   >
-                    {/* <div className="container__date">
-                    </div> */}
-                      <p className='date__p'>
-                        {product.createdAt}
-                      </p>
+                    <p className='date__p'>
+                      {product.createdAt}
+                    </p>
                     <p className='container__data container__data--brand'>
                       {product.brand}</p>
                     <p className='container__data container__Data--title'>

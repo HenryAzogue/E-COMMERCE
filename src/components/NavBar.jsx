@@ -12,35 +12,38 @@ const NavBar = () => {
 
 
   return (
-    <div className='menu'>
-      <ul className="menu__ul">
-        <li className="menu__li">
-          <Link className='li__a' referrerPolicy='no-referrer' to="/">
-            <img className='a__logo' src={index.logo} alt="logo" />
-          </Link>
-        </li>
-        <li className="menu__li">
-          <Link className='li__a' referrerPolicy='no-referrer' to="/">Home</Link>
-        </li>
-        <li className="menu__li">
-          <Link className='li__a' referrerPolicy='no-referrer' to="/login">Login</Link>
-        </li>
-        <li className="menu__li">
-          <Link className='li__a' to="/purchases">
-            Purchases
-          </Link>
-        </li>
-        <li className="menu__li">
-          <button
-            className='li__button'
-            onClick={handleShow}
-          >
-            <i className="fa-solid fa-cart-shopping"></i>
-          </button>
-        </li>
-      </ul>
-      <CardSlidebar show={show} handleClose={handleClose} />
-    </div>
+    <header className="header">
+
+      <div className='menu'>
+        <ul className="menu__ul">
+          <li className="menu__li">
+            <Link className='li__a' referrerPolicy='no-referrer' to="/">
+              <img className='a__logo' src={index.logo} alt="logo" />
+            </Link>
+          </li>
+          <li className="menu__li">
+            <Link className='li__a' referrerPolicy='no-referrer' to="/">Home</Link>
+          </li>
+          <li className="menu__li">
+            <Link className='li__a' referrerPolicy='no-referrer' to="/login">Login</Link>
+          </li>
+          <li className="menu__li">
+            <Link className='li__a' to="/purchases">
+              Purchases
+            </Link>
+          </li>
+          <li className="menu__li">
+            <button
+              className='li__button'
+              onClick={handleShow}
+            >
+              <i className="fa-solid fa-cart-shopping"></i>
+            </button>
+          </li>
+        </ul>
+        <CardSlidebar show={show} handleClose={handleClose} />
+      </div>
+    </header>
   );
 };
 

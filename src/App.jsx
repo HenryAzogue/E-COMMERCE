@@ -8,6 +8,7 @@ import NavBar from './components/NavBar';
 import LoadingScreen from './components/LoadingScreen';
 import { useSelector } from 'react-redux';
 import ProtectedRoutes from './components/ProtectedRoutes';
+import FooterPage from './components/FooterPage';
 
 function App() {
 
@@ -25,6 +26,7 @@ function App() {
           <Route path="/purchases" element={<Purchases />}/>
         </Route>
       </Routes>
+      <FooterPage />
     </HashRouter>
   )
 }

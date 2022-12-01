@@ -73,7 +73,15 @@ const Home = () => {
                   <div className="card__info">
                     <p className='card__title'>{product.title}</p>
                     <p className='card__price'>From ${product.price}</p>
-                    <button className='card__button'>Buy</button>
+                    <button 
+                      className='card__button'                      
+                    >
+                      <Link 
+                      className='card__button--link'                      
+                      to={`/products/${product.id}`}>
+                      Buy
+                      </Link>
+                    </button>
 
                     <Link
                       className='card__moreInfo'

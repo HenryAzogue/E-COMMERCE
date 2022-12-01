@@ -8,7 +8,21 @@ import { getProductsThunk } from '../store/slices/product.slice';
 const ProductDetail = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
-  const [ rates, setRates ] = useState(2);
+  const [rates, setRates] = useState(1);
+  const decrement = () => {
+    if (!setRates) {
+      setRates(rates - 1)
+    } else {
+      setRates(rates = 1);
+    }
+  }
+  const increment =()=>{
+    if(!setRates){
+      setRates(rates = 1)
+    }else{
+      setRates(rates +1)
+    }
+  }
 
   useEffect(() => {
     dispatch(getProductsThunk());
@@ -20,16 +34,16 @@ const ProductDetail = () => {
   const relateProduct = productList.filter(
     (prodcutItem) => prodcutItem.category.id === productInfo.category.id
   );
-  
 
-  const addToCart = ()=> {
+
+  const addToCart = () => {
     const addProduct = {
-      id: productInfo.id, 
+      id: productInfo.id,
       quantity: rates
     }
     dispatch(addProductThunk(addProduct));
   }
- 
+
   return (
     <div className='detail'>
       <section className='detail__section'>
@@ -69,24 +83,23 @@ const ProductDetail = () => {
               <li>Check availability</li>
             </p>
             <div className='add__div'>
-              <button 
+              <button
                 className='div__bag'
                 onClick={addToCart}
               >
                 Add to Bag
               </button>
               <div className='bag__button'>
-                <button className='button__value1'>
-                <i className="fa-solid fa-minus"></i>
+                <button
+                  onClick={decrement}
+                  className='button__value1'>
+                  <i className="fa-solid fa-minus"></i>
                 </button>
-                <input
-                  className='button__input'
-                  type="number"
-                  value={rates}
-                  onChange={(e)=> setRates(e.target.value)}
-                />
-                <button className='button__value2'>
-                <i className="fa-solid fa-plus"></i>
+                <p className='button__input'>{rates}</p>
+                <button
+                  onClick={increment}
+                  className='button__value2'>
+                  <i className="fa-solid fa-plus"></i>
                 </button>
               </div>
             </div>
