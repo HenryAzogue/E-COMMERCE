@@ -114,6 +114,7 @@
 
 .category__input input {
   outline: none;
+
 }
 
 .input__search {
@@ -125,10 +126,10 @@
 }
 
 .input__btn {
-  /* font-size: .8em; */
   border: none;
-  background-color: var(--bcl);
+  background-color: #fff;
   border-radius: 0 25px 25px 0;
+  padding: .25em 0;
   width: 25%;
 }
 
@@ -226,15 +227,6 @@
   padding: .25em 1em;
   margin: 0 auto;
   margin-bottom: .5em;
-}
-
-
-.card__button--link {
-  color: var(--bcl);
-  text-decoration: none;
-}
-.card__button--link:hover {
-  color: var(--bcl);
 }
 
 .card__moreInfo {
@@ -553,6 +545,11 @@
   font-weight: 700;
   margin: 0;
 }
+.cart__deleteIcono {
+  border: none;
+  background: none;
+}
+
 .cart__footer {
   display: flex;
   flex-direction: row;

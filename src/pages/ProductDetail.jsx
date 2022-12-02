@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { Carousel } from 'react-bootstrap';
+import { set } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useParams } from 'react-router-dom';
 import { addProductThunk } from '../store/slices/cart.slice';
@@ -9,24 +10,14 @@ const ProductDetail = () => {
   const dispatch = useDispatch();
   const { id } = useParams();
   const [rates, setRates] = useState(1);
-  const decrement = () => {
-    if (!setRates) {
-      setRates(rates - 1)
-    } else {
-      setRates(rates = 1);
-    }
-  }
-  const increment =()=>{
-    if(!setRates){
-      setRates(rates = 1)
-    }else{
-      setRates(rates +1)
-    }
-  }
 
   useEffect(() => {
     dispatch(getProductsThunk());
   }, []);
+
+  useEffect(()=>{
+    window.scrollTo(0,0);
+  },[id])
 
   const productList = useSelector((state) => state.products)
 
@@ -34,7 +25,6 @@ const ProductDetail = () => {
   const relateProduct = productList.filter(
     (prodcutItem) => prodcutItem.category.id === productInfo.category.id
   );
-
 
   const addToCart = () => {
     const addProduct = {
@@ -91,13 +81,13 @@ const ProductDetail = () => {
               </button>
               <div className='bag__button'>
                 <button
-                  onClick={decrement}
+                  onClick={()=>setRates(Number(rates) - 1)}
                   className='button__value1'>
                   <i className="fa-solid fa-minus"></i>
                 </button>
                 <p className='button__input'>{rates}</p>
                 <button
-                  onClick={increment}
+                  onClick={()=> setRates(Number(rates) + 1)}
                   className='button__value2'>
                   <i className="fa-solid fa-plus"></i>
                 </button>

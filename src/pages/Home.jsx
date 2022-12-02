@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
+import { addProductThunk } from '../store/slices/cart.slice';
 import { filterCategoryProductThunk, filterNameProductThunk, getProductsThunk } from '../store/slices/product.slice';
 
 const Home = () => {
@@ -17,6 +18,15 @@ const Home = () => {
     axios.get("https://e-commerce-api.academlo.tech/api/v1/products/categories")
       .then((res) => setCategoryProduct(res.data.data.categories));
   }, []);
+
+
+  const addToCart = (id) => {
+    const addProductHome = {
+      id,
+      quantity: 1
+    }
+    dispatch(addProductThunk(addProductHome));
+  }
 
   return (
     <div className='home'>
@@ -74,13 +84,10 @@ const Home = () => {
                     <p className='card__title'>{product.title}</p>
                     <p className='card__price'>From ${product.price}</p>
                     <button 
-                      className='card__button'                      
+                      className='card__button' 
+                      onClick={()=>addToCart(product.id)}                     
                     >
-                      <Link 
-                      className='card__button--link'                      
-                      to={`/products/${product.id}`}>
                       Buy
-                      </Link>
                     </button>
 
                     <Link
